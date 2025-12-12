@@ -27,8 +27,8 @@ public:
 
     mutable std::shared_mutex npcs_mutex;
 
-    static constexpr int MAP_WIDTH = 100;
-    static constexpr int MAP_HEIGHT = 100;
+    static constexpr int MAP_WIDTH = 200;
+    static constexpr int MAP_HEIGHT = 200;
 
 private:
     std::vector<std::unique_ptr<NPC>> npcs;

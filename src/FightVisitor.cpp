@@ -61,22 +61,22 @@ void FightVisitor::fight_pair(NPC &a, NPC &b)
 
     if (a_kills_b && b_kills_a)
     {
-        notify(a.getName() + " и " + b.getName() + " убили друг друга!");
+        notify(a.getName() + " - " + a.getType() + " и " + b.getName() + " - " + b.getType() + " убили друг друга!");
         dead.insert(&a);
         dead.insert(&b);
     }
     else if (a_kills_b)
     {
-        notify(a.getName() + " (" + std::to_string(a_roll_attack) + " vs " + std::to_string(b_roll_defense) + ") убил " + b.getName() + "!");
+        notify(a.getName() + " - " + a.getType() + " убил " + b.getName() + " - " + b.getType() + " (" + std::to_string(a_roll_attack) + " vs " + std::to_string(b_roll_defense) + ")");
         dead.insert(&b);
     }
     else if (b_kills_a)
     {
-        notify(b.getName() + " (" + std::to_string(b_roll_attack) + " vs " + std::to_string(a_roll_defense) + ") убил " + a.getName() + "!");
+        notify(b.getName() + " - " + b.getType() + " убил " + a.getName() + " - " + a.getType() + " (" + std::to_string(b_roll_attack) + " vs " + std::to_string(a_roll_defense) + ")");
         dead.insert(&a);
     }
     else
     {
-        notify(a.getName() + " и " + b.getName() + " (" + std::to_string(a_roll_attack) + " vs " + std::to_string(b_roll_defense) + ") убил " + " сражались, но никто не смог преодолеть защиту!");
+        notify(a.getName() + " - " + a.getType() + " не смог преодолеть защиту " + b.getName() + " - " + b.getType() + " (" + std::to_string(a_roll_attack) + " vs " + std::to_string(b_roll_defense) + ")");
     }
 }
